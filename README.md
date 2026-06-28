@@ -8,7 +8,7 @@
 - `01_raw/` 中的原始文件只读，不重命名、不覆盖、不直接修改。
 - 不合并不同 label system：editing activity、diagnostic activity、SNV annotation、specificity、prediction score、metadata 必须分开记录。
 - 所有进入建模的数据必须能追溯到 source、workbook、sheet、原始列名和处理脚本。
-- 各目录首页只保留当前有效数据和最新说明文件；历史备份统一放入对应目录的 `_archive/backups/`。
+- 各目录首页只保留当前有效数据和最新说明文件；数据层历史备份放入对应目录的 `_archive/backups/`，`99_notes/` 的历史记录按每次操作放入 `runs/`。
 
 ## 目录结构
 
@@ -82,15 +82,16 @@
 
 审计、问题和决策记录。
 
-- `*_data_audit*.md`：数据审计报告。
-- `run_report*.md`：每轮脚本运行报告。
-- `evidence_trace*.md`：关键判断的证据来源。
-- `problems_to_resolve*.md`：仍需人工确认的问题。
-- `method_notes*.md`：可用于论文 methods 的流程记录。
+- `current/`：当前仍在使用的问题清单、会议决策和论文数据备注。
+- `runs/`：每次数据整理、目录调整或 Git 上传的独立记录目录。
+- `runs/*/data_audit_*.md`：数据审计报告。
+- `runs/*/run_report_*.md`：每轮脚本或目录操作的运行报告。
+- `runs/*/evidence_trace_*.md`：关键判断的证据来源。
+- `runs/*/method_notes_*.md`：可用于论文 methods 的流程记录。
 
 如果不确定某个字段含义，优先查这里，不要自己猜。
 
-历史备份位于 `99_notes/_archive/backups/`。
+`99_notes/` 不再使用顶层 `_archive/backups/`。历史审计、运行报告、证据链、方法记录和 Git 操作记录按轮次存放在 `99_notes/runs/YYYYMMDD_HHMMSS_<operation-title-slug>/`；若某一轮内部有反复运行产生的旧副本，则放在该运行目录自己的 `archived_backups/`。
 
 ### `scripts/`
 
@@ -109,7 +110,7 @@
 4. 如需追溯原始表，去 `02_extracted_tables/`。
 5. 如需看标准化后的最小表，去 `03_cleaned_minimal/`。
 6. 如需运行第一次 baseline，使用 `04_candidate_ml_dataset/diagnostic_activity_feature_table_v0.csv`，并先读 `baseline_data_usage_guide_zh.md` 或 `baseline_data_usage_guide_en.md`。
-7. 遇到不确定问题，查 `99_notes/problems_to_resolve*.md`。
+7. 遇到不确定问题，查 `99_notes/current/problems_to_resolve_zh.md` 或 `99_notes/current/problems_to_resolve_en.md`；如需追溯历史依据，再查 `99_notes/runs/`。
 
 ## 当前 EasyDesign baseline 说明
 
@@ -132,6 +133,6 @@
 ## 协作注意事项
 
 - 新增数据源时，先更新 `00_data_catalog/`，再导出到 `02_extracted_tables/`。
-- 不确定的字段或标签写入 `99_notes/problems_to_resolve.md`。
+- 不确定的字段或标签写入 `99_notes/current/problems_to_resolve_zh.md` 或 `99_notes/current/problems_to_resolve_en.md`。
 - 不要直接把不同论文、不同 assay、不同 label status 的数据合并成训练集。
 - 每次整理都应留下脚本和 run report，方便复现。
