@@ -8,6 +8,7 @@
 - `01_raw/` 中的原始文件只读，不重命名、不覆盖、不直接修改。
 - 不合并不同 label system：editing activity、diagnostic activity、SNV annotation、specificity、prediction score、metadata 必须分开记录。
 - 所有进入建模的数据必须能追溯到 source、workbook、sheet、原始列名和处理脚本。
+- 各目录首页只保留当前有效数据和最新说明文件；历史备份统一放入对应目录的 `_archive/backups/`。
 
 ## 目录结构
 
@@ -21,11 +22,15 @@
 
 第一次接触本库时，先从这里开始看。
 
+历史备份位于 `00_data_catalog/_archive/backups/`。
+
 ### `01_raw/`
 
 原始数据仓库。所有论文 PDF、supplementary xlsx、GitHub repo、README、source data 等都原封不动保存在这里。
 
 重要规则：不要修改这里的任何文件。脚本只能读取，不能写回。
+
+本目录下的 `README.md` 和 `README_en.md` 是项目层面的使用说明，不属于任何原始来源文件。
 
 ### `02_extracted_tables/`
 
@@ -38,6 +43,8 @@
 - `snv_annotation/`
 - `snv_specificity/`
 - `predicted_library/`
+
+各数据类型子目录如产生历史备份，应放入该子目录自己的 `_archive/backups/`。
 
 ### `03_cleaned_minimal/`
 
@@ -54,6 +61,8 @@
 
 这一层不是最终训练集，而是把高价值表整理成可比较、可追溯的标准形态。
 
+历史备份位于 `03_cleaned_minimal/_archive/backups/`。
+
 ### `04_candidate_ml_dataset/`
 
 候选建模数据层。只有 label 较清楚、record unit 相对一致、来源可追溯的数据才进入这里。
@@ -67,6 +76,8 @@
 - `split_plan_zh.md` / `split_plan_en.md`：训练/验证/外部测试划分说明。
 - `dataset_build_report_zh.md` / `dataset_build_report_en.md`：数据集构建记录。
 
+历史备份位于 `04_candidate_ml_dataset/_archive/backups/`。
+
 ### `99_notes/`
 
 审计、问题和决策记录。
@@ -78,6 +89,8 @@
 - `method_notes*.md`：可用于论文 methods 的流程记录。
 
 如果不确定某个字段含义，优先查这里，不要自己猜。
+
+历史备份位于 `99_notes/_archive/backups/`。
 
 ### `scripts/`
 
@@ -122,4 +135,3 @@
 - 不确定的字段或标签写入 `99_notes/problems_to_resolve.md`。
 - 不要直接把不同论文、不同 assay、不同 label status 的数据合并成训练集。
 - 每次整理都应留下脚本和 run report，方便复现。
-
