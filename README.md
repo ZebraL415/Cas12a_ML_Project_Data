@@ -67,16 +67,13 @@
 
 候选建模数据层。只有 label 较清楚、record unit 相对一致、来源可追溯的数据才进入这里。
 
-当前 EasyDesign baseline 相关文件：
+当前候选数据按来源和任务放入子目录：
 
-- `diagnostic_activity_v0.csv`：候选诊断活性 v0 主表。
-- `diagnostic_activity_feature_table_v0.csv`：第一次 baseline 推荐入口，包含基础序列特征。
-- `diagnostic_activity_augmented_optional_v0.csv`：可选增强数据，默认不要混入 baseline。
-- `baseline_data_usage_guide_zh.md` / `baseline_data_usage_guide_en.md`：如何使用 v0 数据运行第一次 baseline。
-- `split_plan_zh.md` / `split_plan_en.md`：训练/验证/外部测试划分说明。
-- `dataset_build_report_zh.md` / `dataset_build_report_en.md`：数据集构建记录。
+- `diagnostic_activity_easydesign/`：EasyDesign_2024 diagnostic activity 候选数据。
+- `editing_activity_deepcas12a/`：DeepCas12a_2026 editing activity 候选数据。
+- `snv_specificity_extension/`：SNV specificity extension 预留路径。
 
-历史备份位于 `04_candidate_ml_dataset/_archive/backups/`。
+各子目录自行保存当前 v0 文件、使用说明、split plan、build report 和 `_archive/backups/`。顶层只作为导航页。
 
 ### `99_notes/`
 
@@ -109,7 +106,7 @@
 3. 看 `00_data_catalog/label_dictionary.xlsx`，确认标签列含义，避免把预测分数当实验标签。
 4. 如需追溯原始表，去 `02_extracted_tables/`。
 5. 如需看标准化后的最小表，去 `03_cleaned_minimal/`。
-6. 如需运行第一次 baseline，使用 `04_candidate_ml_dataset/diagnostic_activity_feature_table_v0.csv`，并先读 `baseline_data_usage_guide_zh.md` 或 `baseline_data_usage_guide_en.md`。
+6. 如需运行 EasyDesign baseline，使用 `04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`，并先读同目录下的 `EasyDesign_2024_baseline_data_usage_guide_zh.md` 或 `EasyDesign_2024_baseline_data_usage_guide_en.md`。
 7. 遇到不确定问题，查 `99_notes/current/problems_to_resolve_zh.md` 或 `99_notes/current/problems_to_resolve_en.md`；如需追溯历史依据，再查 `99_notes/runs/`。
 
 ## 当前 EasyDesign baseline 说明
@@ -118,7 +115,7 @@
 
 推荐第一次 baseline：
 
-- 输入文件：`04_candidate_ml_dataset/diagnostic_activity_feature_table_v0.csv`
+- 输入文件：`04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`
 - 默认训练集：`baseline_split == baseline_train`
 - 默认验证集：`baseline_split == baseline_validation`
 - 默认标签列：`label_normalized`
@@ -127,7 +124,7 @@
 暂不默认使用：
 
 - `external_test_scale_unconfirmed`：Table S5 外部测试集，label 尺度尚未与 Table S3 完全确认。
-- `diagnostic_activity_augmented_optional_v0.csv`：增强数据，只有明确启用 augmentation 时才使用。
+- `04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_augmented_optional_v0.csv`：增强数据，只有明确启用 augmentation 时才使用。
 - `paper_prediction_*` 列：论文模型预测值，不是实验 label。
 
 ## 协作注意事项

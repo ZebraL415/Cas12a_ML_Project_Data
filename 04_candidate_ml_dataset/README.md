@@ -1,39 +1,21 @@
 # 04_candidate_ml_dataset
 
-本目录保存候选建模数据。只有标签较清楚、record unit 相对一致、来源可追溯的数据才进入这里。
+本目录保存候选建模数据。顶层只作为导航页；具体数据集按 `path_type + source` 放入子目录，避免不同任务、不同标签体系混在一起。
 
-## 第一次 baseline 推荐入口
+## 子目录
 
-- `diagnostic_activity_feature_table_v0.csv`：推荐用于第一次 baseline workflow 的输入表。
-- `diagnostic_activity_v0.csv`：候选诊断活性主表，保留更接近数据集定义的字段。
-- `diagnostic_activity_augmented_optional_v0.csv`：可选增强数据，默认不要与主 baseline 混合。
-
-## 配套说明
-
-- `baseline_data_usage_guide_zh.md` / `baseline_data_usage_guide_en.md`：如何使用候选数据运行 baseline。
-- `split_plan_zh.md` / `split_plan_en.md`：推荐划分方式。
-- `dataset_build_report_zh.md` / `dataset_build_report_en.md`：数据构建记录。
+- `diagnostic_activity_easydesign/`：EasyDesign_2024 诊断活性候选数据。标签来自 CRISPR fluorescence/activity 体系。
+- `editing_activity_deepcas12a/`：DeepCas12a_2026 编辑活性候选数据。标签是 AsCas12a editing activity 二分类。
+- `snv_specificity_extension/`：SNV specificity extension 预留目录，目前只有空占位表。
 
 ## 使用原则
 
-- 默认标签列是 `label_normalized`。
-- 默认只使用 `label_is_primary_baseline == yes` 的行。
-- `paper_prediction_*` 字段是论文模型预测值，不是实验标签。
-- 训练模型前必须再次确认 split、label_status 和数据来源。
+- 先进入对应子目录阅读 `README.md` / `README_en.md`。
+- 不要跨子目录直接合并标签；diagnostic activity、editing activity、SNV specificity 是不同任务。
+- 每个子目录自己管理当前 v0 文件、使用指南、split plan、build report 和 `_archive/backups/`。
+- 顶层不再存放具体数据表。
 
-## 归档
+## 推荐入口
 
-历史备份放在 `_archive/backups/`。目录首页只保留当前 v0 数据和最新说明。
-
-<!-- BEGIN DeepCas12a_2026_EDITING_ACTIVITY -->
-### `editing_activity_deepcas12a/`
-
-DeepCas12a 2026 的候选 editing activity 数据。该数据属于 AsCas12a on-target editing activity 二分类任务，不属于 diagnostic activity，不能与 EasyDesign fluorescence/RFU 标签合并。
-
-主要文件：
-
-- `DeepCas12a_2026_editing_activity_binary_v0.csv`：推荐的候选主表，包含 baseline_train、HT1-2 holdout test、HT2/HT3 independent test。
-- `DeepCas12a_2026_editing_activity_feature_table_v0.csv`：基础序列和 epigenetic 特征表。
-- `DeepCas12a_2026_9fold_partitions_v0.csv`：训练集 9-fold 交叉验证划分。
-- `DeepCas12a_2026_data_usage_guide_zh.md` / `DeepCas12a_2026_data_usage_guide_en.md`：如何使用该数据。
-<!-- END DeepCas12a_2026_EDITING_ACTIVITY -->
+- EasyDesign baseline：`diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`
+- DeepCas12a baseline：`editing_activity_deepcas12a/DeepCas12a_2026_editing_activity_feature_table_v0.csv`
