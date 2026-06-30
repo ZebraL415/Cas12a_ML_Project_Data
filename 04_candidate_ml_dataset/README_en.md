@@ -24,3 +24,16 @@ This directory stores candidate modeling datasets. Data enter this layer only wh
 ## Archive
 
 Historical backups are stored in `_archive/backups/`. The directory front page keeps only current v0 data and latest documentation.
+
+<!-- BEGIN DeepCas12a_2026_EDITING_ACTIVITY -->
+### `editing_activity_deepcas12a/`
+
+Candidate editing activity data from DeepCas12a 2026. This source is an AsCas12a on-target editing activity binary classification task. It is not diagnostic activity and must not be merged with EasyDesign fluorescence/RFU labels.
+
+Key files:
+
+- `DeepCas12a_2026_editing_activity_binary_v0.csv`: recommended candidate main table with baseline_train, HT1-2 holdout test, and HT2/HT3 independent tests.
+- `DeepCas12a_2026_editing_activity_feature_table_v0.csv`: basic sequence and epigenetic feature table.
+- `DeepCas12a_2026_9fold_partitions_v0.csv`: 9-fold cross-validation partitions for the training set.
+- `DeepCas12a_2026_data_usage_guide_zh.md` / `DeepCas12a_2026_data_usage_guide_en.md`: usage guide for this dataset.
+<!-- END DeepCas12a_2026_EDITING_ACTIVITY -->

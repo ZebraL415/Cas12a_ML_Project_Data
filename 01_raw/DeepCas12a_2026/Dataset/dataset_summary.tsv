@@ -1,0 +1,8 @@
+file	source	preprocessing	records	label_0	label_1	skipped_source_lines
+HT1-1_train.txt	Dataset_HT_1_3new.txt + first 2 records from HT1-2	standardize_ht	15000	8656	6344	1
+HT1-2_test.txt	Dataset_HT_1_4new.txt after moving first 2 records to HT1-1	standardize_ht	1292	748	544	0
+HT2_test.txt	Dataset_HT2.txt	standardize_ht	2963	1880	1083	2
+HT3_test.txt	Dataset_HT3.txt	standardize_ht	1251	1002	249	0
+HEKplasmid_in_situ.txt	data-HEKplasmid.txt	preserve_epi	55	46	9	1
+HEK_lenti_in_situ.txt	DatasetHEK-lenti.txt	preserve_epi	148	107	41	1
+train_HT1-1_plus_HEK_in_situ.txt	HT1-1_train + HEKplasmid_in_situ + HEK_lenti_in_situ	combined_train	15203	8809	6394	0

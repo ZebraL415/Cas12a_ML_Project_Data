@@ -1,0 +1,19 @@
+DeepCas12a model-ready dataset column descriptions
+
+All TXT files in this directory use the same four-column, whitespace-delimited format without a header:
+
+1. sequence:
+   A 34 bp AsCas12a target-context sequence, defined as 4 bp upstream context + PAM + 23 bp protospacer + 3 bp downstream context.
+
+2. methylation_status:
+   A 34-character DNA methylation feature string. `N` indicates unmethylated and `A` indicates methylated.
+
+3. dnase_signal_status:
+   A 34-character chromatin-accessibility feature string. `A` indicates accessible and `N` indicates not accessible.
+
+4. label:
+   Binary AsCas12a on-target activity label. `1` indicates high activity and `0` indicates low activity.
+
+The HT-derived datasets were standardized during preprocessing: methylation_status was set to 34 `N` characters and dnase_signal_status was set to 34 `A` characters for every HT-derived record.
+
+See README.md in this directory for file-level provenance, record counts, and preprocessing notes.

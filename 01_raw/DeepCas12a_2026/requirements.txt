@@ -1,0 +1,11 @@
+numpy
+optuna
+pandas
+biopython
+joblib
+scikit-learn
+scipy
+tensorflow
+torch
+tqdm
+ViennaRNA

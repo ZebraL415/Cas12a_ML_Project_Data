@@ -24,3 +24,16 @@
 ## 归档
 
 历史备份放在 `_archive/backups/`。目录首页只保留当前 v0 数据和最新说明。
+
+<!-- BEGIN DeepCas12a_2026_EDITING_ACTIVITY -->
+### `editing_activity_deepcas12a/`
+
+DeepCas12a 2026 的候选 editing activity 数据。该数据属于 AsCas12a on-target editing activity 二分类任务，不属于 diagnostic activity，不能与 EasyDesign fluorescence/RFU 标签合并。
+
+主要文件：
+
+- `DeepCas12a_2026_editing_activity_binary_v0.csv`：推荐的候选主表，包含 baseline_train、HT1-2 holdout test、HT2/HT3 independent test。
+- `DeepCas12a_2026_editing_activity_feature_table_v0.csv`：基础序列和 epigenetic 特征表。
+- `DeepCas12a_2026_9fold_partitions_v0.csv`：训练集 9-fold 交叉验证划分。
+- `DeepCas12a_2026_data_usage_guide_zh.md` / `DeepCas12a_2026_data_usage_guide_en.md`：如何使用该数据。
+<!-- END DeepCas12a_2026_EDITING_ACTIVITY -->
