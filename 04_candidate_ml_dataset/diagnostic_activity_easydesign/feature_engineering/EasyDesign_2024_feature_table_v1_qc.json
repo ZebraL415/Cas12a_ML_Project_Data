@@ -1,0 +1,21 @@
+{
+  "source_v0": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv",
+  "engineered_full": ".codex_tmp/staging_feature_integration/04_candidate_ml_dataset/diagnostic_activity_easydesign/feature_engineering/full_generated/EasyDesign_2024_validated_engineered_features_full_v1.csv",
+  "output_table": ".codex_tmp/staging_feature_integration/04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v1.csv",
+  "source_v0_sha256": "af3d2a7e6bcf95a2a9d3453800575180f4146059a88da89fe7e62bcfcaca34e2",
+  "engineered_full_sha256": "736ced657e4771f9be7a3c9c671f5ca24f13b201f8a8dbffb284dd324f24159c",
+  "rows": 11992,
+  "columns": 89,
+  "selected_engineered_features": 60,
+  "duplicate_record_ids": 0,
+  "split_counts": {
+    "baseline_train": 8417,
+    "baseline_validation": 2217,
+    "external_test_scale_unconfirmed": 1358
+  },
+  "record_order_exact": true,
+  "hamming_exact_agreement": 1.0,
+  "unaligned_position_cells_changed_from_zero_to_missing": 827,
+  "label_system": "diagnostic_activity",
+  "model_training_performed": false
+}

@@ -1,0 +1,50 @@
+{
+  "model_training_performed": false,
+  "source_rows": 11992,
+  "feature_v1_rows": 11992,
+  "feature_v1_columns": 89,
+  "record_order_exact": true,
+  "prediction_rows": 2217,
+  "prediction_duplicate_record_ids": 0,
+  "prediction_split_counts": {
+    "baseline_validation": 2217
+  },
+  "prediction_sequence_match": {
+    "crRNA_sequence": 1.0,
+    "target_sequence": 1.0
+  },
+  "prediction_label_match": 1.0,
+  "recomputed_metrics": {
+    "n_validation": 2217,
+    "spearman_rho": 0.7656512519075428,
+    "pearson_r": 0.7472376792001862,
+    "mae": 0.32781451605773565,
+    "rmse": 0.4248300208684902,
+    "r2": 0.5548576939188749
+  },
+  "reported_metrics": {
+    "n_validation": 2217,
+    "spearman_rho": 0.7656512519075428,
+    "pearson_r": 0.7472376815740672,
+    "mae": 0.32781451485636176,
+    "rmse": 0.4248300194128052,
+    "r2": 0.5548576969694455,
+    "baseline_spearman": 0.423,
+    "spearman_change_vs_baseline": 0.3426512519075428
+  },
+  "metric_absolute_differences": {
+    "spearman_rho": 0.0,
+    "pearson_r": 2.3738809806772565e-09,
+    "mae": 1.2013738892591164e-09,
+    "rmse": 1.455685016971131e-09,
+    "r2": 3.050570684948184e-09
+  },
+  "maximum_saved_residual_rounding_difference": 1.1862182619504225e-07,
+  "importance_all_rows": 131,
+  "importance_duplicate_features": 0,
+  "importance_sum": 1.00000007127,
+  "first_run_importance_rows": 5,
+  "position_missing_cells": 827,
+  "position_missing_encoding_valid": true,
+  "reproducibility_boundary": "Saved predictions and metrics are internally consistent, but the reference improved run cannot be independently retrained because its training code, hyperparameters, dependency lock, and random seed were not supplied."
+}

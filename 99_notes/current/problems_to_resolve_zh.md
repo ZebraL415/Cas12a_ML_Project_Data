@@ -22,6 +22,10 @@
 - Table S5 有少数 DNA context 不是 45 nt；这些行使用 best-match fallback 定位 target window，后续应人工复核。
 - Table S4 增强数据是否进入首个正式训练流程，需要在模型方案确定后决定。
 - Table S3 只有 type1/type2，不含具体 pathogen 名称；如果要做物种分组验证，需要额外映射。
+- 徐同学脚本选择 `direct` 是因为它 100% 复现项目已有的 `guide_target_hamming_dist_computed`；该证据不是独立生物学方向验证，仍需由论文方法、作者代码或人工序列约定确认。
+- Table S3 有 740 行 target 长度小于 25 nt；需要确认这些短序列是原始实验设计、截短记录还是其他编码约定。v1 已将未对齐的位置特征保留为空值。
+- 参考改进结果缺少训练代码、超参数、依赖版本和随机种子；保存预测的指标已核对，但模型训练流程仍不能独立复现。
+- 参考结果中的 proximal/middle/distal 命名与徐同学脚本的 generic thirds 不完全一致；在确认 PAM 与序列方向前，不应作生物学区域解释。
 
 <!-- BEGIN DeepCas12a_2026 -->
 ## DeepCas12a_2026

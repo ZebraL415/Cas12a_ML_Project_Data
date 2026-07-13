@@ -1,0 +1,26 @@
+{
+  "input_file": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv",
+  "output_file": "/private/tmp/easydesign_xu_engineered_qc/diagnostic_activity_validated_engineered_features_v1.csv",
+  "rows_total": 11992,
+  "rows_used_for_orientation_validation": 10634,
+  "selected_alignment_mode": "direct",
+  "selection_basis": "guide_target_hamming_dist_computed",
+  "best_exact_agreement": 1.0,
+  "minimum_exact_agreement_required": 0.99,
+  "computationally_validated": true,
+  "biologically_verified_from_source_documentation": false,
+  "new_engineered_feature_columns": 139,
+  "equal_length_rows": 11252,
+  "unequal_length_rows": 740,
+  "crRNA_length_distribution": {
+    "25": 11992
+  },
+  "target_length_distribution": {
+    "17": 4,
+    "18": 2,
+    "23": 47,
+    "24": 687,
+    "25": 11252
+  },
+  "interpretation": "The selected orientation reproduces the existing Hamming distance column and is therefore computationally validated for reproducible feature generation. Biological sequence conventions should still be confirmed from the EasyDesign source documentation."
+}

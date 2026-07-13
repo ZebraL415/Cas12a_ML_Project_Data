@@ -12,10 +12,10 @@
 
 - 先进入对应子目录阅读 `README.md` / `README_en.md`。
 - 不要跨子目录直接合并标签；diagnostic activity、editing activity、SNV specificity 是不同任务。
-- 每个子目录自己管理当前 v0 文件、使用指南、split plan、build report 和 `_archive/backups/`。
+- 每个子目录自己管理当前版本数据、使用指南、split plan、build report、特征工程记录和 `_archive/backups/`。
 - 顶层不再存放具体数据表。
 
 ## 推荐入口
 
-- EasyDesign baseline：`diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`
+- EasyDesign baseline：`diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v1.csv`
 - DeepCas12a baseline：`editing_activity_deepcas12a/DeepCas12a_2026_editing_activity_feature_table_v0.csv`

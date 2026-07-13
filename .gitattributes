@@ -1,0 +1,4 @@
+# Preserve collaborator/reference result bytes, including original CRLF endings.
+04_candidate_ml_dataset/diagnostic_activity_easydesign/evaluation/xu_first_run/first_run_feature_importance_top30.csv binary
+04_candidate_ml_dataset/diagnostic_activity_easydesign/evaluation/reference_improved_feature_run/*.csv binary
+04_candidate_ml_dataset/diagnostic_activity_easydesign/evaluation/reference_improved_feature_run/improved_feature_metrics.json binary
