@@ -2,17 +2,17 @@
 
 ## 1. Purpose
 
-This review compares Xu's and Lin's processing of EasyDesign guide-target mismatch information. It separates reproducible facts, mutually corroborated results, unresolved inferences, and outputs that must not enter the default training table. Mismatch features are inputs or annotations, not fluorescence/RFU activity labels.
+This review compares Shirui's (诗睿) and Ke'en's (可恩) processing of EasyDesign guide-target mismatch information. It separates reproducible facts, mutually corroborated results, unresolved inferences, and outputs that must not enter the default training table. Mismatch features are inputs or annotations, not fluorescence/RFU activity labels.
 
 ## 2. Artifacts Reviewed
 
-### Xu
+### Shirui (诗睿)
 
 - Original contributions: `generate_validated_engineered_features.py` and first-run feature importance.
 - Former integration commit: `fa8d67b Integrate Xu engineered features`.
 - Main processing: compare direct, complement, reverse, and reverse-complement orientations of cleaned `crRNA_sequence` and `target_sequence`; select the orientation most consistent with project field `guide_target_hamming_dist_computed`; then generate Hamming, position, mismatch-type, and sequence-composition features.
 
-### Lin
+### Ke'en (可恩)
 
 - Directory: `/Users/linzibo/Downloads/EasyDesign_S2_scanning/`.
 - Inputs: `guide_seq.xlsx` and `Table_S2.xlsx`.
@@ -22,31 +22,31 @@ This review compares Xu's and Lin's processing of EasyDesign guide-target mismat
 
 ## 3. Confirmed Facts
 
-- The 10,634 `No.` and `guide_seq` rows in Lin's `guide_seq.xlsx` match original Table S3 row by row; they contain 1,357 unique guides.
-- The 198 records in Lin's `Table_S2.xlsx` match Table S2 in the original combined supplementary workbook.
+- The 10,634 `No.` and `guide_seq` rows in Ke'en's `guide_seq.xlsx` match original Table S3 row by row; they contain 1,357 unique guides.
+- The 198 records in Ke'en's `Table_S2.xlsx` match Table S2 in the original combined supplementary workbook.
 - The paper confirms that Table S2 contains 22 original templates, each accompanied by six substitution templates, one insertion template, and one deletion template, for 22 x 9 = 198 records.
 - In each Table S2 group, the first seven sequences have equal lengths, the eighth is longer, and the ninth is shorter. The first sequence in all 22 groups equals the majority consensus of the first seven. The paper and data structure therefore support grouping every nine rows and treating the first as the reference.
 - Every Table S3 guide is 25 nt and begins with TTTN. The paper defines 21 positions downstream of the PAM, supporting positions 1-4 as PAM and positions 5-25 as spacer.
 - Table S3 contains 740 `target_at_guide` rows with `-`. The paper explicitly uses `-` as the fifth encoded character for insertions or deletions.
-- Lin's script is reproducible: `mismatch_wide_table.xlsx` has 6,506 rows and 30 columns, and a temporary rerun matched the existing workbook cell by cell.
+- Ke'en's script is reproducible: `mismatch_wide_table.xlsx` has 6,506 rows and 30 columns, and a temporary rerun matched the existing workbook cell by cell.
 
 ## 4. Mutually Corroborated and Usable Content
 
 ### 4.1 Direct Orientation for Gap-Free Guide-Target Pairs
 
-Lin's output contains 5,078 template-guide mappings that reconstruct to real, gap-free Table S3 guide-target pairs. They represent 3,404 unique pairs and 4,457 Table S3 experimental rows.
+Ke'en's output contains 5,078 template-guide mappings that reconstruct to real, gap-free Table S3 guide-target pairs. They represent 3,404 unique pairs and 4,457 Table S3 experimental rows.
 
 Within this subset:
 
-- Lin's `No_mismatch` agrees with the Xu/project direct Hamming count at 100%.
-- After reversing the coordinate system, Lin's 21-position spacer vector agrees with Xu's position vector at 100%.
-- The coordinate relation is `Lin pos_i = Xu mismatch_pos_(26-i)`; Lin does not represent Xu positions 1-4 in the PAM region.
+- Ke'en's `No_mismatch` agrees with the Shirui/project direct Hamming count at 100%.
+- After reversing the coordinate system, Ke'en's 21-position spacer vector agrees with Shirui's position vector at 100%.
+- The coordinate relation is `Ke'en pos_i = Shirui mismatch_pos_(26-i)`; Ke'en does not represent Shirui positions 1-4 in the PAM region.
 
 This provides independent Table S2 source evidence for the direct orientation and mismatch calculation in the gap-free subset. It can confirm computational orientation, but equivalent features from both pipelines must not be entered twice in a model.
 
 ### 4.2 PAM and Spacer Boundary
 
-Xu represents the complete 25-nt guide-target pair, while Lin uses the reverse-complemented 21-nt spacer. Together with the universal TTTN prefix and the paper methods, the project should explicitly distinguish:
+Shirui represents the complete 25-nt guide-target pair, while Ke'en uses the reverse-complemented 21-nt spacer. Together with the universal TTTN prefix and the paper methods, the project should explicitly distinguish:
 
 - `pam_aligned = positions 1-4`
 - `spacer_aligned = positions 5-25`
@@ -54,27 +54,27 @@ Xu represents the complete 25-nt guide-target pair, while Lin uses the reverse-c
 
 ### 4.3 Sequence-Composition Features
 
-Xu's length, GC, base fraction, entropy, homopolymer, and k-mer calculations are principled and reproducible when the input is an unambiguous A/C/G/T sequence. They can be recomputed on the corrected sequence layer. Constant, duplicate, and linearly equivalent features should be removed, and one feature-importance run must not automatically define the final feature set.
+Shirui's length, GC, base fraction, entropy, homopolymer, and k-mer calculations are principled and reproducible when the input is an unambiguous A/C/G/T sequence. They can be recomputed on the corrected sequence layer. Constant, duplicate, and linearly equivalent features should be removed, and one feature-importance run must not automatically define the final feature set.
 
 ### 4.4 Improved Understanding of Raw Hamming Anomalies
 
 The raw Table S3 `guide_target_hamming_dist` agrees with direct counting on the 25-position, gap-preserving character alignment for 98.232% of rows. There are 188 inconsistent rows representing 28 unique pairs.
 
-Lin's source scan covers 10 of those anomalous pairs and 90 rows. The template evidence supports direct sequence counts of zero or one rather than the raw values of 1-10. The raw field therefore likely represents an author-provided aligned distance for most rows but contains anomalies or mixed processing; it remains excluded from default training features.
+Ke'en's source scan covers 10 of those anomalous pairs and 90 rows. The template evidence supports direct sequence counts of zero or one rather than the raw values of 1-10. The raw field therefore likely represents an author-provided aligned distance for most rows but contains anomalies or mixed processing; it remains excluded from default training features.
 
-## 5. Limitations and Improper Processing in Xu's Work
+## 5. Limitations and Improper Processing in Shirui's Work
 
 ### 5.1 Upstream Cleaning Destroyed the Indel Alignment
 
-Existing v0 cleaning removed `-` from Table S3 `target_at_guide`, shortening 740 targets to 17, 18, 23, or 24 nt. Xu's script then left-aligns the shortened target and adds a length-difference penalty. Bases after the first gap shift position, so mismatch position, mismatch type, consecutive-run, and regional mismatch features for these rows cannot be interpreted at their original biological coordinates.
+Existing v0 cleaning removed `-` from Table S3 `target_at_guide`, shortening 740 targets to 17, 18, 23, or 24 nt. Shirui's script then left-aligns the shortened target and adds a length-difference penalty. Bases after the first gap shift position, so mismatch position, mismatch type, consecutive-run, and regional mismatch features for these rows cannot be interpreted at their original biological coordinates.
 
 ### 5.2 Orientation Validation Was Not Independent Biological Validation
 
-Xu selected direct orientation because it exactly matched project field `guide_target_hamming_dist_computed`, which was calculated from the same cleaned sequences under the same definition. This proves internal consistency, but the reference and tested result share inputs and logic. Lin's Table S2 crosswalk for 3,404 unique gap-free pairs supplies partial independent support.
+Shirui selected direct orientation because it exactly matched project field `guide_target_hamming_dist_computed`, which was calculated from the same cleaned sequences under the same definition. This proves internal consistency, but the reference and tested result share inputs and logic. Ke'en's Table S2 crosswalk for 3,404 unique gap-free pairs supplies partial independent support.
 
 ### 5.3 Absent Positions Were Encoded as Ordinary Values
 
-Xu's full generator writes zero beyond the aligned length, conflating "position absent" with "position present and matched." Even where the later v1 builder changed these values to missing, the coordinate shift after a gap remained unresolved.
+Shirui's full generator writes zero beyond the aligned length, conflating "position absent" with "position present and matched." Even where the later v1 builder changed these values to missing, the coordinate shift after a gap remained unresolved.
 
 ### 5.4 Feature-Importance Evidence Boundary
 
@@ -82,9 +82,9 @@ The first-run feature importance and reference improved outputs lack complete tr
 
 ### 5.5 Direct Integration Was Premature
 
-Directly merging Xu features into default v1 while 740 indel rows and raw Hamming semantics remained unresolved packaged known alignment defects as model-ready data. This run reverses that default integration with Git revert.
+Directly merging Shirui's features into default v1 while 740 indel rows and raw Hamming semantics remained unresolved packaged known alignment defects as model-ready data. This run reverses that default integration with Git revert.
 
-## 6. Limitations and Improper Processing in Lin's Work
+## 6. Limitations and Improper Processing in Ke'en's Work
 
 ### 6.1 Experimental Record Keys and Labels Were Lost
 
@@ -119,15 +119,15 @@ The 22 x 9 grouping and first-row reference are credible, but `Reference_Templat
 | Content | Status | Use |
 |---|---|---|
 | EasyDesign v0 experimental labels, provenance, and split | Retain | Current default candidate data |
-| Xu gap-free sequence-composition features | Adopt after recomputation | v2 candidate inputs |
-| Xu direct mismatch features for gap-free rows | Conditionally adopt | Only rows passing 25-nt A/C/G/T alignment QC |
-| Existing Xu mismatch features for 740 indel rows | Hold | Regenerate while preserving `-` |
-| Xu feature importance | Reference only | Candidate priority, not final selection evidence |
-| Lin 22 x 9 grouping and first-row reference | Adopt | Source-mapping metadata |
-| Lin unique hits crosslinked to Table S3 | Adopt after correction | `source_mapping` annotation, not a label |
-| Lin multi-template hits | Retain with ambiguity flag | Group validation or manual review |
-| Lin 1,428 non-Table S3 candidates | Exclude from training | Unlabeled candidate library or hold |
-| Lin current `pos_1..pos_21` | Do not merge directly | Convert to unified 25-position direct coordinates |
+| Shirui gap-free sequence-composition features | Adopt after recomputation | v2 candidate inputs |
+| Shirui direct mismatch features for gap-free rows | Conditionally adopt | Only rows passing 25-nt A/C/G/T alignment QC |
+| Existing Shirui mismatch features for 740 indel rows | Hold | Regenerate while preserving `-` |
+| Shirui feature importance | Reference only | Candidate priority, not final selection evidence |
+| Ke'en 22 x 9 grouping and first-row reference | Adopt | Source-mapping metadata |
+| Ke'en unique hits crosslinked to Table S3 | Adopt after correction | `source_mapping` annotation, not a label |
+| Ke'en multi-template hits | Retain with ambiguity flag | Group validation or manual review |
+| Ke'en 1,428 non-Table S3 candidates | Exclude from training | Unlabeled candidate library or hold |
+| Ke'en current `pos_1..pos_21` | Do not merge directly | Convert to unified 25-position direct coordinates |
 | Raw `guide_target_hamming_dist` | Hold | Preserve value and anomaly flag for audit |
 
 ## 8. Remaining Unresolved Questions
