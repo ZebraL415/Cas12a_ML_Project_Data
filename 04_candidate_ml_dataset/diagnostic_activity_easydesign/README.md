@@ -2,17 +2,14 @@
 
 本目录保存 EasyDesign_2024 的候选 diagnostic activity 数据。该数据属于 CRISPR-Cas12a diagnostics 活性路径，不能与 DeepCas12a editing activity 二分类标签合并。
 
-## 推荐入口
+## 当前文件
 
-- `EasyDesign_2024_diagnostic_activity_feature_table_v1.csv`：当前推荐 baseline 特征表；保留 v0 全部字段并加入 60 个审计后的工程特征。
-- `EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`：基础对照表，保留用于复现第一轮简单特征结果。
+- `EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`：第一次 EasyDesign baseline 推荐入口。
 - `EasyDesign_2024_diagnostic_activity_v0.csv`：候选诊断活性主表。
 - `EasyDesign_2024_diagnostic_activity_augmented_optional_v0.csv`：可选增强数据，默认不要混入主 baseline。
 - `EasyDesign_2024_baseline_data_usage_guide_zh.md` / `EasyDesign_2024_baseline_data_usage_guide_en.md`：数据使用说明。
 - `EasyDesign_2024_split_plan_zh.md` / `EasyDesign_2024_split_plan_en.md`：划分说明。
 - `EasyDesign_2024_dataset_build_report_zh.md` / `EasyDesign_2024_dataset_build_report_en.md`：构建报告。
-- `feature_engineering/`：完整工程特征、选择清单、QC 和生成器输出。
-- `evaluation/`：徐同学的首轮结果和参考改进结果；仅用于审计与比较。
 
 ## 使用原则
 
@@ -20,7 +17,4 @@
 - 默认只使用 `label_is_primary_baseline == yes` 的行。
 - `paper_prediction_*` 字段是论文模型预测值，不是实验标签。
 - Table S4 增强数据只有在明确启用 augmentation 时才使用。
-- 模型输入必须显式排除 ID、split、label、notes 和审计元数据列；具体清单见使用指南。
-- `guide_target_hamming_dist_raw` 的语义仍未解决，默认不作为模型特征。
-- `feature_engineering/full_generated/` 是完整可复算产物，不是默认训练入口。
 - 历史备份位于 `_archive/backups/`。

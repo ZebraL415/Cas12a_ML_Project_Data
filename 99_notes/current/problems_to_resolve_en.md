@@ -22,10 +22,6 @@ This file records questions that still require manual confirmation, grouped by d
 - A small number of Table S5 DNA contexts are not 45 nt; those rows use a best-match fallback to locate the target window and should be manually reviewed later.
 - Whether Table S4 augmentation should enter the first formal training workflow should be decided after the model plan is selected.
 - Table S3 contains only type1/type2 and no exact pathogen names; species-level grouping validation needs an additional mapping.
-- Xu's script selects `direct` because it reproduces the project-derived `guide_target_hamming_dist_computed` column exactly. This is not independent biological orientation evidence and still requires confirmation from the paper methods, author code, or an explicit sequence convention.
-- In Table S3, 740 target sequences are shorter than 25 nt. It remains necessary to determine whether these are intentional experimental designs, truncated records, or another encoding convention. v1 leaves unaligned positional features missing.
-- The reference improved result lacks training code, hyperparameters, dependency versions, and a random seed. Its saved prediction metrics have been verified, but the training workflow is not independently reproducible.
-- Proximal/middle/distal names in the reference result do not exactly match the generator's generic thirds. They should not receive biological-region interpretations until PAM placement and sequence orientation are confirmed.
 
 <!-- BEGIN DeepCas12a_2026 -->
 ## DeepCas12a_2026

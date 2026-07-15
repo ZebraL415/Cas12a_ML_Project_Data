@@ -73,7 +73,7 @@
 - `editing_activity_deepcas12a/`：DeepCas12a_2026 editing activity 候选数据。
 - `snv_specificity_extension/`：SNV specificity extension 预留路径。
 
-各子目录自行保存当前版本数据、使用说明、split plan、build report、特征工程记录和 `_archive/backups/`。顶层只作为导航页。
+各子目录自行保存当前 v0 文件、使用说明、split plan、build report 和 `_archive/backups/`。顶层只作为导航页。
 
 ### `99_notes/`
 
@@ -98,8 +98,6 @@
 
 - `inspect_easy_design.py`：第一轮 EasyDesign 数据侦察。
 - `resolve_easy_design_round2.py`：结合原论文 PDF 和补充资料截图后的第二轮整理与 baseline v0 生成。
-- `build_easydesign_feature_table_v1.py`：核验工程特征并构建 EasyDesign 推荐特征表 v1。
-- `contributions/xu/generate_validated_engineered_features.py`：徐同学提供的工程特征生成脚本原件。
 
 ## 推荐使用顺序
 
@@ -108,7 +106,7 @@
 3. 看 `00_data_catalog/label_dictionary.xlsx`，确认标签列含义，避免把预测分数当实验标签。
 4. 如需追溯原始表，去 `02_extracted_tables/`。
 5. 如需看标准化后的最小表，去 `03_cleaned_minimal/`。
-6. 如需运行 EasyDesign baseline，优先使用 `04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v1.csv`，并先读同目录下的 `EasyDesign_2024_baseline_data_usage_guide_zh.md` 或 `EasyDesign_2024_baseline_data_usage_guide_en.md`。
+6. 如需运行 EasyDesign baseline，使用 `04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`，并先读同目录下的 `EasyDesign_2024_baseline_data_usage_guide_zh.md` 或 `EasyDesign_2024_baseline_data_usage_guide_en.md`。
 7. 遇到不确定问题，查 `99_notes/current/problems_to_resolve_zh.md` 或 `99_notes/current/problems_to_resolve_en.md`；如需追溯历史依据，再查 `99_notes/runs/`。
 
 ## 当前 EasyDesign baseline 说明
@@ -117,14 +115,11 @@
 
 推荐第一次 baseline：
 
-- 推荐输入文件：`04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v1.csv`
-- 基础对照文件：`04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`
+- 输入文件：`04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`
 - 默认训练集：`baseline_split == baseline_train`
 - 默认验证集：`baseline_split == baseline_validation`
 - 默认标签列：`label_normalized`
 - 默认只使用：`label_is_primary_baseline == yes`
-
-v1 保留 v0 的全部追踪字段，并增加经过复算和去冗余筛选的配对、位置、错配类型及局部序列特征。`feature_engineering/` 保存完整工程特征、选择清单和 QC；`evaluation/` 保存组员结果及参考评估，二者都不是新的实验标签。
 
 暂不默认使用：
 

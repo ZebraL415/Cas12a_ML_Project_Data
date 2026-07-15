@@ -12,10 +12,10 @@ This directory stores candidate modeling datasets. The top level is only a navig
 
 - Enter the relevant subdirectory and read `README.md` / `README_en.md` first.
 - Do not directly merge labels across subdirectories; diagnostic activity, editing activity, and SNV specificity are different tasks.
-- Each subdirectory manages its own current-version data, usage guide, split plan, build report, feature-engineering records, and `_archive/backups/`.
+- Each subdirectory manages its own current v0 files, usage guide, split plan, build report, and `_archive/backups/`.
 - The top level no longer stores concrete data tables.
 
 ## Recommended Entry Points
 
-- EasyDesign baseline: `diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v1.csv`
+- EasyDesign baseline: `diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`
 - DeepCas12a baseline: `editing_activity_deepcas12a/DeepCas12a_2026_editing_activity_feature_table_v0.csv`
