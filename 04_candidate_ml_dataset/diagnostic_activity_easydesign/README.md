@@ -1,20 +1,21 @@
 # diagnostic_activity_easydesign
 
-本目录保存 EasyDesign_2024 的候选 diagnostic activity 数据。该数据属于 CRISPR-Cas12a diagnostics 活性路径，不能与 DeepCas12a editing activity 二分类标签合并。
+本目录保存 EasyDesign_2024 `diagnostic_activity` 候选数据。标签是 Cas12a diagnostics 实验荧光活性，不能与 DeepCas12a 二分类 `editing_activity` 合并。
 
-## 当前文件
+## 推荐入口
 
-- `EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`：第一次 EasyDesign baseline 推荐入口。
-- `EasyDesign_2024_diagnostic_activity_v0.csv`：候选诊断活性主表。
-- `EasyDesign_2024_diagnostic_activity_augmented_optional_v0.csv`：可选增强数据，默认不要混入主 baseline。
-- `EasyDesign_2024_baseline_data_usage_guide_zh.md` / `EasyDesign_2024_baseline_data_usage_guide_en.md`：数据使用说明。
-- `EasyDesign_2024_split_plan_zh.md` / `EasyDesign_2024_split_plan_en.md`：划分说明。
-- `EasyDesign_2024_dataset_build_report_zh.md` / `EasyDesign_2024_dataset_build_report_en.md`：构建报告。
+- `EasyDesign_2024_diagnostic_activity_feature_table_v2.csv`：当前推荐 baseline 输入，gap-aware，11,992 行、188 列。
+- `EasyDesign_2024_v2_data_usage_guide_zh.md` / `_en.md`：运行任何模型前必读。
+- `EasyDesign_2024_dataset_build_report_v2_zh.md` / `_en.md`：v2 来源、行数、修正和限制。
+- `feature_engineering_v2/`：145 行特征词典和自动 QC。
 
-## 使用原则
+第一次 baseline 只使用 `default_training_eligibility == eligible_core_v2`，再按现有 `baseline_split` 分训练/验证，共 9,894 条无 gap Table S3 记录。740 条 `conditional_gap_aware_v2` 只能在模型显式支持 gap 时加入；Table S5 的 1,358 条外部测试记录不能进入训练。
 
-- 默认标签列是 `label_normalized`。
-- 默认只使用 `label_is_primary_baseline == yes` 的行。
-- `paper_prediction_*` 字段是论文模型预测值，不是实验标签。
-- Table S4 增强数据只有在明确启用 augmentation 时才使用。
-- 历史备份位于 `_archive/backups/`。
+## 兼容和可选文件
+
+- `EasyDesign_2024_diagnostic_activity_feature_table_v0.csv`：保留用于历史复现；其中删除 gap 后的旧位置特征不适用于 740 条 indel 行。
+- `EasyDesign_2024_diagnostic_activity_v0.csv`：v0 候选主表。
+- `EasyDesign_2024_diagnostic_activity_augmented_optional_v0.csv`：Table S4 augmentation，默认不使用。
+- 原 v0 usage guide、split plan 和 build report：仅用于复现旧版。
+
+`mapping_*` 是来源审计字段，不是标签，也不应作为默认数值模型输入。历史备份放 `_archive/backups/`。

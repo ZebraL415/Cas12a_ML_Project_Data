@@ -1,0 +1,11 @@
+# Method Notes: EasyDesign Gap-Aware Mismatch v2
+
+Raw supplementary data were retained under read-only conditions without overwriting or renaming. pandas was used to read Table S2 and Table S3 from the combined supplementary workbook. Sequence cleaning removed only BOM, whitespace, and non-sequence display characters; `-` in Table S3 `target_at_guide` was preserved in the 25-position `target_aligned_25`, while `target_ungapped` was generated only for composition statistics and template search.
+
+Guide and target were compared position by position in one direct-orientation 25-position coordinate system. Each position was classified as match, substitution, gap in target, gap in guide, or unresolved, with separate event counts for PAM positions 1-4 and spacer positions 5-25. `gap_in_target` was defined as a representational state, not a confirmed biological deletion. Raw Hamming values were retained for audit but excluded from default model inputs.
+
+Table S2 templates were reconstructed into the paper-described 22 original templates and eight variants per group, yielding a 22 x 9 structure. Source mapping searched both forward and reverse-complement windows of `target_ungapped` and retained all template and positional hits. A/C/G/T exact matching was preferred; IUPAC-compatible matching was used only when no exact hit existed. No tunable mismatch threshold was used, and tied results were not replaced by the first hit.
+
+Feature table v2 used v0 as the row-level scaffold, preserving labels, source tables, and splits. It added gap-aware pair features, position-level difference/substitution/target-gap features, substitution-type counts, and guide/target/PAM/spacer composition features. Source mappings, QC, labels, and identifier fields were explicitly excluded from default candidate inputs. An independent verification script checked row counts, keys, alignment lengths, event counts, label and split preservation, pair-level split leakage, and feature-dictionary uniqueness.
+
+The default baseline is restricted to no-gap Table S3 records. Gap records form a conditional extension, and Table S5 remains a scale-unconfirmed external-test candidate. No model training was performed.

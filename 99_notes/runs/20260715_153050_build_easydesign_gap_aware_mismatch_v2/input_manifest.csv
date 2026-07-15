@@ -1,0 +1,7 @@
+input_type,path_or_url,version_or_sha256,role,write_policy
+paper_pdf,/Users/linzibo/Downloads/iMeta - 2024 - Huang - Deep learning enhancing guide RNA design for CRISPR Cas12a‐based diagnostics.pdf,88f40e04c0e5e4a4dd3958534f774a24f9f7e1f4d6d9ac4fbffa878c829cf607,methods and data-availability evidence,read_only
+official_repository,https://github.com/scRNA-Compt/EasyDesign,5c06a30d0a43be28a958831587f6ab706c2d4876,public code and history evidence,read_only
+combined_workbook,01_raw/EasyDesign_2024/data/imt2214-sup-0002-tables1-9sourcedata (1).xlsx,3edd9372ccfbca56aba22dae8687898ba482d1654ae07196d07b99cb6deeb27e,authoritative Table S2 and Table S3 source,read_only
+repository_readme,01_raw/EasyDesign_2024/README.md,537a594fa475b66c4182b8976f1a9ac6d16fe8adf178e6630aed2215bbff1260,local official README mirror,read_only
+predictor_code,01_raw/EasyDesign_2024/easyDesign/utils/predict_activity.py,a0cb7419479fecdec7969a88459d762937cd715291c7b1c22efcafcbcf218fd5,gap encoding and runtime-input evidence,read_only
+feature_table_v0,04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v0.csv,af3d2a7e6bcf95a2a9d3453800575180f4146059a88da89fe7e62bcfcaca34e2,row-level labels provenance and split scaffold,read_only

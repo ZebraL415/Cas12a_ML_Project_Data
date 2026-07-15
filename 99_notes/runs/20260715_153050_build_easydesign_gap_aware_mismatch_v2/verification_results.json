@@ -1,0 +1,151 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "check": "alignment_row_count",
+      "passed": true,
+      "detail": 10634
+    },
+    {
+      "check": "alignment_record_id_unique",
+      "passed": true,
+      "detail": 10634
+    },
+    {
+      "check": "alignment_lengths_25",
+      "passed": true,
+      "detail": {
+        "25": 10634
+      }
+    },
+    {
+      "check": "guide_lengths_25",
+      "passed": true,
+      "detail": {
+        "25": 10634
+      }
+    },
+    {
+      "check": "gap_row_count",
+      "passed": true,
+      "detail": 740
+    },
+    {
+      "check": "no_gap_row_count",
+      "passed": true,
+      "detail": 9894
+    },
+    {
+      "check": "gap_ungapped_length_distribution",
+      "passed": true,
+      "detail": {
+        "17": 4,
+        "18": 2,
+        "23": 47,
+        "24": 687
+      }
+    },
+    {
+      "check": "event_count_invariant",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "position_count_invariant",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "raw_hamming_disagreement_count",
+      "passed": true,
+      "detail": 188
+    },
+    {
+      "check": "source_map_one_row_per_record",
+      "passed": true,
+      "detail": {
+        "rows": 10634,
+        "unique": 10634
+      }
+    },
+    {
+      "check": "source_map_hit_coverage",
+      "passed": true,
+      "detail": 10633
+    },
+    {
+      "check": "v2_row_count_matches_v0",
+      "passed": true,
+      "detail": {
+        "v0": 11992,
+        "v2": 11992
+      }
+    },
+    {
+      "check": "v2_record_id_unique",
+      "passed": true,
+      "detail": 11992
+    },
+    {
+      "check": "v2_table_s3_count",
+      "passed": true,
+      "detail": 10634
+    },
+    {
+      "check": "v2_table_s5_count",
+      "passed": true,
+      "detail": 1358
+    },
+    {
+      "check": "labels_unchanged",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "check": "splits_unchanged",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "check": "source_tables_unchanged",
+      "passed": true,
+      "detail": true
+    },
+    {
+      "check": "core_eligibility_count",
+      "passed": true,
+      "detail": 9894
+    },
+    {
+      "check": "conditional_gap_count",
+      "passed": true,
+      "detail": 740
+    },
+    {
+      "check": "external_test_count",
+      "passed": true,
+      "detail": 1358
+    },
+    {
+      "check": "no_gap_legacy_hamming_agreement",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "gap_alignment_preserved",
+      "passed": true,
+      "detail": 740
+    },
+    {
+      "check": "pair_split_no_leakage",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "check": "feature_dictionary_names_unique",
+      "passed": true,
+      "detail": 145
+    }
+  ],
+  "failed_check_count": 0
+}

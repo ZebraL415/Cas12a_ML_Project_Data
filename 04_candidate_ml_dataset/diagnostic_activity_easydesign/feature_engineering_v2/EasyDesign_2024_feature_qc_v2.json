@@ -1,0 +1,24 @@
+{
+  "v0_rows": 11992,
+  "v2_rows": 11992,
+  "record_id_unique": true,
+  "labels_unchanged": true,
+  "baseline_split_unchanged": true,
+  "table_s3_rows": 10634,
+  "table_s5_rows": 1358,
+  "table_s3_no_gap_rows": 9894,
+  "table_s3_gap_rows": 740,
+  "eligible_core_v2_rows": 9894,
+  "conditional_gap_aware_v2_rows": 740,
+  "external_test_rows": 1358,
+  "no_gap_new_vs_legacy_hamming_agreement_rows": 9894,
+  "gap_new_vs_legacy_hamming_agreement_rows": 33,
+  "pair_split_leakage_count": 0,
+  "feature_dictionary_rows": 145,
+  "output_columns": 188,
+  "mapping_confidence_counts_table_s3": {
+    "high": 7421,
+    "medium": 3146,
+    "review": 67
+  }
+}

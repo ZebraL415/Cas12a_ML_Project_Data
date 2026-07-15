@@ -1,0 +1,35 @@
+{
+  "input": "01_raw/EasyDesign_2024/data/imt2214-sup-0002-tables1-9sourcedata (1).xlsx",
+  "input_sha256": "3edd9372ccfbca56aba22dae8687898ba482d1654ae07196d07b99cb6deeb27e",
+  "table_s2_rows": 198,
+  "table_s2_groups": 22,
+  "table_s2_group_structure_review_rows": 0,
+  "table_s3_rows": 10634,
+  "no_gap_rows": 9894,
+  "gap_rows": 740,
+  "raw_hamming_agreement_rows": 10446,
+  "raw_hamming_disagreement_rows": 188,
+  "mapping_status_counts": {
+    "unique_exact_window": 7421,
+    "ambiguous_template_single_group": 3146,
+    "ambiguous_multiple_groups": 50,
+    "iupac_compatible_single_group": 16,
+    "unmapped_exact_or_iupac": 1
+  },
+  "mapping_confidence_counts": {
+    "high": 7421,
+    "medium": 3146,
+    "review": 67
+  },
+  "mapping_any_hit_rows": 10633,
+  "mapping_unmapped_rows": 1,
+  "mapping_hit_rows": 19672,
+  "outputs": [
+    "02_extracted_tables/diagnostic_activity/easydesign_mismatch_mapping/EasyDesign_2024_TableS3_alignment_preserved_raw.csv",
+    "02_extracted_tables/diagnostic_activity/easydesign_mismatch_mapping/EasyDesign_2024_TableS2_template_groups_raw.csv",
+    "02_extracted_tables/diagnostic_activity/easydesign_mismatch_mapping/EasyDesign_2024_TableS2_TableS3_mapping_hits_raw.csv",
+    "03_cleaned_minimal/easydesign_mismatch/EasyDesign_2024_guide_target_alignment_v2.csv",
+    "03_cleaned_minimal/easydesign_mismatch/EasyDesign_2024_source_mapping_v1.csv",
+    "03_cleaned_minimal/easydesign_mismatch/EasyDesign_2024_mismatch_qc_v2.csv"
+  ]
+}

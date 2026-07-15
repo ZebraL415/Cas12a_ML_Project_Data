@@ -1,20 +1,11 @@
 # 03_cleaned_minimal
 
-This directory stores minimally standardized tables. Data here have been mapped from original column names into comparable fields, but they are still not final machine-learning training datasets.
+This directory stores traceable minimally standardized tables and QC tables. Source, record, sequence, and label fields begin to use shared names here, but these are still not final training datasets.
 
-## Current key files
+- `diagnostic_activity_minimal.csv`: main minimally cleaned EasyDesign diagnostic-activity table.
+- `diagnostic_activity_augmented_optional.csv`: optional augmentation, excluded from the default baseline.
+- `easydesign_mismatch/`: gap-preserving Table S3 alignment v2, Table S2 source mapping, and mismatch review queue.
+- `editing_activity_minimal.csv`: minimally cleaned DeepCas12a editing-activity table.
+- Other `*_minimal.csv` files: separate label paths.
 
-- `diagnostic_activity_minimal.csv`: main minimally cleaned EasyDesign diagnostic activity table.
-- `diagnostic_activity_augmented_optional.csv`: optional augmented data, not included in the default baseline.
-- `README_cleaning_notes.md`: cleaning notes.
-- Other `*_minimal.csv` files: placeholders or tables reserved for later paths.
-
-## Usage rules
-
-- Each row should be traceable to a source, source table, record ID, and original label column.
-- `label_status` must distinguish measured, predicted, annotation, metadata, or unclear.
-- Do not force uncertain fields into standardized columns. Record unresolved issues in `99_notes/problems_to_resolve.md`.
-
-## Archive
-
-Historical backups are stored in `_archive/backups/`. The directory front page keeps only current minimally cleaned versions.
+Every row must trace to a source, source table, record ID, and original label. `label_status` must distinguish measured, predicted, annotation, metadata, or unclear. Record uncertainty under `99_notes/current/`. Store historical backups under `_archive/backups/`.

@@ -1,0 +1,4 @@
+script_path,sha256,purpose,run_order
+scripts/build_easydesign_alignment_v2.py,428fc42d891b44782604891c34eda5c3341d2007266dc2f47c7825fe89252b9b,preserve Table S3 alignment and build conservative Table S2 source mapping,1
+scripts/build_easydesign_feature_table_v2.py,27dc65ec944fe56935c25f7e8b07709d8cc07751776d617b62b2577cb1ceded4,build feature table v2 feature dictionary and QC,2
+scripts/verify_easydesign_v2.py,7b6c1e1e9b7f84f3e3261e58c29e35d56b830a81f91591a659f638e325ac8396,verify row alignment label split mapping and feature invariants,3
