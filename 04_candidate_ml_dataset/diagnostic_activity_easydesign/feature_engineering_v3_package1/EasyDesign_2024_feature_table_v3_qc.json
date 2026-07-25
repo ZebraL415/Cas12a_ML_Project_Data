@@ -1,0 +1,95 @@
+{
+  "build_status": "passed",
+  "parent_table": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/feature_engineering_v2_1_context/EasyDesign_2024_diagnostic_activity_feature_table_v2_1_context.csv",
+  "parent_sha256": "39cda8368c216784507ac002df687b28a4f9cc6f81e2b0e84043e45eddb4c1c0",
+  "viennarna_version": "2.7.2",
+  "temperature_c": 37.0,
+  "rna_parameter_set": "Turner2004",
+  "dna_parameter_set": "Mathews2004",
+  "full_table_shape": [
+    11992,
+    250
+  ],
+  "nonpositional4_table_shape": [
+    11992,
+    143
+  ],
+  "candidate_feature_count": 192,
+  "nonpositional4_feature_count": 85,
+  "block_counts": {
+    "pair_alignment": 11,
+    "pair_position": 75,
+    "sequence_composition": 32,
+    "sequence_context": 58,
+    "substitution_type": 12,
+    "thermodynamic": 4
+  },
+  "record_id_unique": true,
+  "row_order_preserved": true,
+  "parent_columns_preserved": true,
+  "thermodynamic_missing_counts": {
+    "thermo_guide_spacer_unfolding_ensemble_rna_proxy_kcal_mol": 0,
+    "thermo_target_local_dsDNA_separation_mfe_dna_proxy_kcal_mol": 0,
+    "thermo_guide_target_full_hybrid_mfe_rna_proxy_kcal_mol": 0,
+    "thermo_guide_target_seed6_hybrid_mfe_rna_proxy_kcal_mol": 0
+  },
+  "thermodynamic_unique_counts": {
+    "thermo_guide_spacer_unfolding_ensemble_rna_proxy_kcal_mol": 1523,
+    "thermo_target_local_dsDNA_separation_mfe_dna_proxy_kcal_mol": 197,
+    "thermo_guide_target_full_hybrid_mfe_rna_proxy_kcal_mol": 366,
+    "thermo_guide_target_seed6_hybrid_mfe_rna_proxy_kcal_mol": 138
+  },
+  "thermodynamic_summary": {
+    "thermo_guide_spacer_unfolding_ensemble_rna_proxy_kcal_mol": {
+      "count": 11992.0,
+      "mean": 1.9062560371883293,
+      "std": 1.9855331410585897,
+      "min": 0.0013230150798335671,
+      "25%": 0.40970852971076965,
+      "50%": 1.3046870231628418,
+      "75%": 2.792900562286377,
+      "max": 13.81587028503418
+    },
+    "thermo_target_local_dsDNA_separation_mfe_dna_proxy_kcal_mol": {
+      "count": 11992.0,
+      "mean": 26.31549366244163,
+      "std": 3.0038429404294655,
+      "min": 12.4,
+      "25%": 24.3,
+      "50%": 26.3,
+      "75%": 28.3,
+      "max": 37.1
+    },
+    "thermo_guide_target_full_hybrid_mfe_rna_proxy_kcal_mol": {
+      "count": 11992.0,
+      "mean": -33.36172448298866,
+      "std": 6.434619844576353,
+      "min": -52.2,
+      "25%": -37.7,
+      "50%": -33.5,
+      "75%": -29.1,
+      "max": -8.5
+    },
+    "thermo_guide_target_seed6_hybrid_mfe_rna_proxy_kcal_mol": {
+      "count": 11992.0,
+      "mean": -5.020446964643095,
+      "std": 2.8127585940740087,
+      "min": -12.5,
+      "25%": -7.0,
+      "50%": -4.8,
+      "75%": -2.9,
+      "max": 2.6
+    }
+  },
+  "training_label_spearman_univariate": {
+    "thermo_guide_spacer_unfolding_ensemble_rna_proxy_kcal_mol": -0.029568960924968062,
+    "thermo_target_local_dsDNA_separation_mfe_dna_proxy_kcal_mol": -0.03106632692264154,
+    "thermo_guide_target_full_hybrid_mfe_rna_proxy_kcal_mol": -0.09188297320795752,
+    "thermo_guide_target_seed6_hybrid_mfe_rna_proxy_kcal_mol": -0.11164809373284709
+  },
+  "limitations": [
+    "No complete crRNA direct-repeat sequence is available; guide unfolding is spacer-only.",
+    "No full DNA-template context is available for every row; dsDNA separation is local.",
+    "ViennaRNA RNAduplex is an RNA-RNA proxy, not an RNA-DNA/protein-bound R-loop model."
+  ]
+}

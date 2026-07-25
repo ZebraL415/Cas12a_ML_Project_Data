@@ -1,0 +1,26 @@
+{
+  "build_id": "EasyDesign-v2.1-context",
+  "source_table": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v2.csv",
+  "core_dictionary": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/feature_engineering_v2/EasyDesign_2024_feature_dictionary_v2.csv",
+  "output_table_name": "EasyDesign_2024_diagnostic_activity_feature_table_v2_1_context.csv",
+  "output_dictionary_name": "EasyDesign_2024_feature_dictionary_v2_1_context.csv",
+  "expected_parent_shape": [11992, 188],
+  "expected_output_shape": [11992, 246],
+  "immutability": {
+    "parent_v2_is_read_only": true,
+    "preserve_all_parent_columns_and_values": true,
+    "preserve_row_order": true,
+    "do_not_recompute_target_aligned_25": true
+  },
+  "context_feature_definition": {
+    "guide_input": "crRNA_sequence",
+    "target_input": "target_ungapped",
+    "alphabet": "ACGT",
+    "dinucleotides": ["AA", "AC", "AG", "AT", "CA", "CC", "CG", "CT", "GA", "GC", "GG", "GT", "TA", "TC", "TG", "TT"],
+    "trinucleotides": ["AAA", "CCC", "GGG", "TTT", "GCG", "CGC", "TAT", "ATA"],
+    "local_gc_windows": ["first_half", "second_half", "first_5nt", "last_5nt"],
+    "include_unique_base_count": true,
+    "features_per_sequence": 29,
+    "total_new_features": 58
+  }
+}

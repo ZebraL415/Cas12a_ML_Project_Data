@@ -23,6 +23,7 @@
 
 ## 当前记录
 
+- 最新运行：`runs/20260725_141127_build_easydesign_feature_table_v3_package1/`，包含 Delta G 核验、V3 构建、P1 采用证据和输出哈希。
 - 当前待解决问题：`current/problems_to_resolve_zh.md` 和 `current/problems_to_resolve_en.md`。
 - 当前会议决策：`current/meeting_decisions_zh.md` 和 `current/meeting_decisions_en.md`。
 - 当前论文数据备注：`current/paper_data_notes_zh.md` 和 `current/paper_data_notes_en.md`。

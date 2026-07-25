@@ -25,17 +25,17 @@
 
 ### EasyDesign diagnostic activity
 
-推荐入口：`04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v2.csv`。
+当前 Package1 推荐入口：`04_candidate_ml_dataset/diagnostic_activity_easydesign/feature_engineering_v3_package1/EasyDesign_2024_diagnostic_activity_feature_table_v3.csv`。正式输入列必须从同目录 `EasyDesign_2024_feature_block_manifest_v3.csv` 读取。
 
-第一次 baseline 只用：
+P1-0 统一 baseline 使用：
 
 ```text
-default_training_eligibility == eligible_core_v2
 baseline_split in {baseline_train, baseline_validation}
 label_is_primary_baseline == yes
+source_table_id == EasyDesign_2024_TableS3_training
 ```
 
-这得到 9,894 条无 gap Table S3 记录。先读同目录 `EasyDesign_2024_v2_data_usage_guide_zh.md`；740 条 gap 行只能在明确支持 gap 的第二阶段加入，1,358 条 Table S5 行只作尺度未确认的外部测试候选。
+这得到 10,634 条 Table S3 开发记录，其中训练 8,417 条、固定验证 2,217 条；gap-aware V3 不再默认删除 740 条 gap 记录。1,358 条 Table S5 仍只作外部排序验证，不能进入特征选择。V3 thermodynamic 列是有条件保留的 proxy，不是直接测得的 R-loop Delta G。完整 P1-0/P1-1 代码和结果位于本地 `/Users/linzibo/Cas12a_ML_Project/`。
 
 ### DeepCas12a editing activity
 

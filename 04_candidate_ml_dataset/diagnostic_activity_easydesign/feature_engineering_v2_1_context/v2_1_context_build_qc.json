@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "expected_58_context_features": true,
+    "no_missing_context_values": true,
+    "all_context_values_finite": true,
+    "frequency_and_gc_values_in_0_1": true,
+    "unique_base_count_in_1_4": true,
+    "dinucleotide_frequencies_sum_to_one": true,
+    "target_ungapped_contains_no_gap": true,
+    "record_id_unique": true,
+    "record_id_and_order_unchanged": true,
+    "parent_columns_value_exact_after_roundtrip": true,
+    "no_duplicate_output_columns": true,
+    "expected_output_shape": true,
+    "candidate_input_count_188": true,
+    "label_unchanged": true,
+    "split_unchanged": true,
+    "source_table_id_unchanged": true
+  },
+  "all_passed": true
+}

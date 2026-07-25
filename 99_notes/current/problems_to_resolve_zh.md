@@ -30,6 +30,14 @@
 - Table S4 augmentation 是否进入正式训练，应在模型方案确定后决定。
 - Table S3 只有 type1/type2，没有具体 pathogen 名称；物种分组验证需要额外权威映射。
 
+### Feature Table V3 / Package1 仍需解决
+
+- 源数据没有完整 crRNA direct repeat；`thermo_guide_spacer_unfolding_ensemble_rna_proxy_kcal_mol` 只能表示 21 nt spacer 的局部解折叠 proxy。
+- 每条 Table S3 记录尚未唯一映射到完整 DNA 模板和 RPA 产物上下文；局部 dsDNA separation proxy 不能替代真实实验模板自由能。
+- ViennaRNA `RNAduplex` 的 full/seed hybrid 列是 RNA-RNA proxy，不包含 RNA-DNA 特异参数、Cas12a 蛋白或 R-loop 构象变化。
+- P1-1 中 thermodynamic 块仅带来平均 OOF Spearman `+0.000732`，5 个 seed 中 3 个为正，未达到正式晋级标准；是否继续优化需作为单独受控实验决定。
+- 75 维 pair-position 块被移除后 Spearman 略升而 MAE 略差；需要在固定 P1-0 条件下比较更紧凑的位置编码。
+
 <!-- BEGIN DeepCas12a_2026 -->
 ## DeepCas12a_2026
 

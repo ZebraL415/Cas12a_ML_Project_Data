@@ -23,6 +23,7 @@ Rules:
 
 ## Current records
 
+- Latest run: `runs/20260725_141127_build_easydesign_feature_table_v3_package1/`, containing the Delta G audit, V3 build, P1 adoption evidence, and output hashes.
 - Current unresolved questions: `current/problems_to_resolve_zh.md` and `current/problems_to_resolve_en.md`.
 - Current meeting decisions: `current/meeting_decisions_zh.md` and `current/meeting_decisions_en.md`.
 - Current paper data notes: `current/paper_data_notes_zh.md` and `current/paper_data_notes_en.md`.

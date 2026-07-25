@@ -1,0 +1,15 @@
+{
+  "accepted": false,
+  "checks": {
+    "minimum_positive_seeds": false,
+    "minimum_mean_spearman_delta": false,
+    "minimum_allowed_seed_delta": true,
+    "mean_mae_nonworse": true,
+    "mean_rmse_nonworse": true
+  },
+  "positive_seed_count": 3,
+  "mean_spearman_delta": 0.0007320702820856173,
+  "minimum_seed_spearman_delta": -0.00026336488153455573,
+  "mean_mae_improvement": 0.0011081210356924664,
+  "mean_rmse_improvement": 0.0009086963719861174
+}

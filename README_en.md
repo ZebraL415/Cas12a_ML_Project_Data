@@ -25,17 +25,17 @@ This repository organizes CRISPR-Cas12a paper and repository data into traceable
 
 ### EasyDesign Diagnostic Activity
 
-Recommended entry: `04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v2.csv`.
+Current Package1 entry: `04_candidate_ml_dataset/diagnostic_activity_easydesign/feature_engineering_v3_package1/EasyDesign_2024_diagnostic_activity_feature_table_v3.csv`. Formal input columns must be read from `EasyDesign_2024_feature_block_manifest_v3.csv` in the same directory.
 
-For the first baseline, use only:
+The P1-0 unified baseline uses:
 
 ```text
-default_training_eligibility == eligible_core_v2
 baseline_split in {baseline_train, baseline_validation}
 label_is_primary_baseline == yes
+source_table_id == EasyDesign_2024_TableS3_training
 ```
 
-This yields 9,894 no-gap Table S3 records. Read `EasyDesign_2024_v2_data_usage_guide_en.md` in the same directory first. The 740 gap rows may enter only in a second stage that explicitly supports gaps; the 1,358 Table S5 rows remain scale-unconfirmed external-test candidates.
+This yields 10,634 Table S3 development records: 8,417 training and 2,217 fixed-validation rows. Gap-aware V3 no longer excludes the 740 gap records by default. The 1,358 Table S5 rows remain external ranking validation and must not enter feature selection. V3 thermodynamic columns are conditionally retained proxies, not measured R-loop Delta G. Complete P1-0/P1-1 code and results are stored locally in `/Users/linzibo/Cas12a_ML_Project/`.
 
 ### DeepCas12a Editing Activity
 

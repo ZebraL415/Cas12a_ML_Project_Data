@@ -30,6 +30,14 @@ This file records questions that still require manual confirmation, grouped by d
 - Whether Table S4 augmentation enters formal training should be decided after the model plan is selected.
 - Table S3 has type1/type2 but no exact pathogen names; species-group validation needs an additional authoritative mapping.
 
+### Feature Table V3 / Package1 Remaining Questions
+
+- The source data lack the complete crRNA direct repeat; `thermo_guide_spacer_unfolding_ensemble_rna_proxy_kcal_mol` can represent only a local 21-nt spacer-unfolding proxy.
+- Each Table S3 record is not yet uniquely mapped to its full DNA template and RPA-product context; the local dsDNA-separation proxy cannot replace experimental template free energy.
+- ViennaRNA `RNAduplex` full/seed hybrid columns are RNA-RNA proxies and omit RNA-DNA-specific parameters, Cas12a protein effects, and R-loop conformational changes.
+- In P1-1, the thermodynamic block adds only `+0.000732` mean OOF Spearman and is positive in 3/5 seeds, failing formal promotion; further optimization requires a separate controlled experiment.
+- Removing the 75-dimensional pair-position block slightly improves Spearman but slightly worsens MAE; a compact position encoding must be compared under fixed P1-0 conditions.
+
 <!-- BEGIN DeepCas12a_2026 -->
 ## DeepCas12a_2026
 

@@ -1,0 +1,52 @@
+{
+  "experiment_id": "P1-0-unified-v3-baseline",
+  "created_at_utc": "2026-07-25T05:49:09.849669+00:00",
+  "data_file": "data/feature_table_v3/EasyDesign_2024_diagnostic_activity_feature_table_v3.csv",
+  "data_sha256": "3701482e61fbdb0fb30af2173fa0911154329b12555552592dbe37d2e72ed89a",
+  "feature_manifest": "data/feature_table_v3/EasyDesign_2024_feature_block_manifest_v3.csv",
+  "feature_manifest_sha256": "909e6b603223c16b0b219861a33d23b145d03eb2d5a4292ae09195c473dd0201",
+  "config_sha256": "b4ae479e161abd8727869d5e92a946eb1ccc4121ad24718bf3024946ab4c9fad",
+  "script_sha256": "add2ce2f80a4eedf2cf14f02da588c4e6e8fafffd0455e54219bb17034563494",
+  "python": "3.12.13 (main, Mar  3 2026, 15:35:03) [Clang 21.1.4 ]",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.5.1",
+    "xgboost": "2.1.4",
+    "matplotlib": "3.10.9",
+    "ViennaRNA": "2.7.2"
+  },
+  "seed": 42,
+  "n_features_nominal": 192,
+  "n_features_active": 187,
+  "constant_features_removed": [
+    "gap_count_guide",
+    "target_gap_pos_01",
+    "target_gap_pos_02",
+    "guide_length_acgt",
+    "guide_spacer_length_acgt"
+  ],
+  "train_metrics": {
+    "n": 8417,
+    "spearman_rho": 0.9521055365361101,
+    "pearson_r": 0.9492602813250056,
+    "mae": 0.15361588167288676,
+    "rmse": 0.212473622460213,
+    "r2": 0.891993778307692
+  },
+  "validation_metrics": {
+    "n": 2217,
+    "spearman_rho": 0.770186279837074,
+    "pearson_r": 0.7510449689174787,
+    "mae": 0.32719290359396586,
+    "rmse": 0.42262309720019114,
+    "r2": 0.5594705666003206
+  },
+  "reference_spearman": {
+    "V2-0_fixed_validation": 0.6928355384021819,
+    "V2-1_exploratory_fixed_validation_approx": 0.7706,
+    "V2-1_formal_grouped_oof": 0.7368873413473495
+  }
+}

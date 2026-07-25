@@ -1,0 +1,100 @@
+{
+  "audit_status": "completed",
+  "formal_use_verdict": "fail_original_implementation_use_corrected_proxy_features",
+  "viennarna_version": "2.7.2",
+  "temperature_c": 37.0,
+  "v2_sha256": "42ec7035ae5d560cfef5206f425d594bd209207b518641ed51409d4164d62145",
+  "canonical_v2_sha256": "42ec7035ae5d560cfef5206f425d594bd209207b518641ed51409d4164d62145",
+  "v2_input_matches_canonical": true,
+  "submitted_sha256": "75aca030944b6283e12b407af054f99407dfcb0aebe47b0ecec6a22f8ad6acc1",
+  "v2_shape": [
+    11992,
+    188
+  ],
+  "submitted_shape": [
+    11992,
+    192
+  ],
+  "expected_four_columns_added": true,
+  "record_order_preserved": true,
+  "base_columns_value_preserved": true,
+  "submitted_missing_counts": {
+    "dG_hybrid_full": 0,
+    "dG_hybrid_seed": 0,
+    "dG_self_crRNA": 0,
+    "dG_self_target": 0
+  },
+  "submitted_unique_counts": {
+    "dG_hybrid_full": 310,
+    "dG_hybrid_seed": 61,
+    "dG_self_crRNA": 100,
+    "dG_self_target": 122
+  },
+  "submitted_summary": {
+    "dG_hybrid_full": {
+      "count": 11992.0,
+      "mean": -9.9329136042322,
+      "std": 5.32694631997806,
+      "min": -37.400001525878906,
+      "25%": -13.0,
+      "50%": -9.300000190734863,
+      "75%": -6.099999904632568,
+      "max": 0.0
+    },
+    "dG_hybrid_seed": {
+      "count": 11992.0,
+      "mean": -0.5246164101990483,
+      "std": 1.1056240617491573,
+      "min": -7.699999809265137,
+      "25%": -0.5,
+      "50%": 0.0,
+      "75%": 0.0,
+      "max": 0.0
+    },
+    "dG_self_crRNA": {
+      "count": 11992.0,
+      "mean": -2.030945629705293,
+      "std": 2.245847288855779,
+      "min": -13.300000190734863,
+      "25%": -3.0999999046325684,
+      "50%": -1.5,
+      "75%": 0.0,
+      "max": 0.0
+    },
+    "dG_self_target": {
+      "count": 11992.0,
+      "mean": -2.03684956638181,
+      "std": 2.2000819951182935,
+      "min": -13.5,
+      "25%": -3.0999999046325684,
+      "50%": -1.5,
+      "75%": -0.1000000014901161,
+      "max": 0.0
+    }
+  },
+  "reproduction_max_abs_difference": {
+    "dG_hybrid_full": 1.7763568394002505e-15,
+    "dG_hybrid_seed": 4.440892098500626e-16,
+    "dG_self_crRNA": 1.7763568394002505e-15,
+    "dG_self_target": 1.7763568394002505e-15
+  },
+  "reproduction_matches_at_1e_minus_6": {
+    "dG_hybrid_full": true,
+    "dG_hybrid_seed": true,
+    "dG_self_crRNA": true,
+    "dG_self_target": true
+  },
+  "perfect_match_row_count": 3176,
+  "seed_zero_count_all": 8463,
+  "seed_zero_fraction_all": 0.7057204803202135,
+  "seed_zero_fraction_perfect_matches": 0.6961586901763224,
+  "self_crrna_equals_self_target_fraction_perfect_matches": 1.0,
+  "code_findings": [
+    "The 25-nt crRNA_sequence field includes the 4-nt PAM representation and is not a complete physical crRNA.",
+    "The first seven bases used for the submitted seed feature contain four PAM bases and only three spacer bases.",
+    "Submitted guide and target strings use the same target-oriented representation; they were not reverse-complemented before cofolding.",
+    "RNA.cofold evaluates two RNAs and allows intra- and intermolecular structures; it is not a pure RNA-DNA hybrid energy.",
+    "The target sequence was converted T-to-U and folded as RNA although EasyDesign assays used DNA templates.",
+    "The submitted ablation and plotting scripts remove all 58 v2.1 sequence-context features, while run_vertical3_deltaG.py keeps numeric context columns; the scripts therefore do not define one consistent V3 input profile."
+  ]
+}

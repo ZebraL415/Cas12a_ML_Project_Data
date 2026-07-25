@@ -1,0 +1,50 @@
+{
+  "build_id": "EasyDesign-v2.1-context",
+  "created_at_utc": "2026-07-23T17:03:27.298481+00:00",
+  "source_table": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/EasyDesign_2024_diagnostic_activity_feature_table_v2.csv",
+  "source_table_sha256": "42ec7035ae5d560cfef5206f425d594bd209207b518641ed51409d4164d62145",
+  "source_dictionary": "/Users/linzibo/Cas12a_ML_Project_Data/04_candidate_ml_dataset/diagnostic_activity_easydesign/feature_engineering_v2/EasyDesign_2024_feature_dictionary_v2.csv",
+  "source_dictionary_sha256": "dc80a813ee7e17360044236b8a215e719ffac5883ccb875b5f461279a61a9dc7",
+  "output_table": "/Users/linzibo/Cas12a_ML_Project_Expr/V2-0_unified_baseline/runs/20260724T010300_V2-0-v2.1-context-build/EasyDesign_2024_diagnostic_activity_feature_table_v2_1_context.csv",
+  "output_sha256": "39cda8368c216784507ac002df687b28a4f9cc6f81e2b0e84043e45eddb4c1c0",
+  "output_dictionary": "/Users/linzibo/Cas12a_ML_Project_Expr/V2-0_unified_baseline/runs/20260724T010300_V2-0-v2.1-context-build/EasyDesign_2024_feature_dictionary_v2_1_context.csv",
+  "output_dictionary_sha256": "8585673d72bc7f53f2d2df4b686da22f60084b05786b93a2247d7ed977f56c66",
+  "n_rows": 11992,
+  "n_parent_columns": 188,
+  "n_context_features": 58,
+  "n_output_columns": 246,
+  "n_candidate_inputs": 188,
+  "feature_blocks": {
+    "pair_alignment": 11,
+    "pair_position": 75,
+    "sequence_composition": 32,
+    "sequence_context": 58,
+    "substitution_type": 12
+  },
+  "positional_alignment_source": "target_aligned_25 (preserved from V2; not recomputed)",
+  "context_inputs": [
+    "crRNA_sequence",
+    "target_ungapped"
+  ],
+  "qc": {
+    "checks": {
+      "expected_58_context_features": true,
+      "no_missing_context_values": true,
+      "all_context_values_finite": true,
+      "frequency_and_gc_values_in_0_1": true,
+      "unique_base_count_in_1_4": true,
+      "dinucleotide_frequencies_sum_to_one": true,
+      "target_ungapped_contains_no_gap": true,
+      "record_id_unique": true,
+      "record_id_and_order_unchanged": true,
+      "parent_columns_value_exact_after_roundtrip": true,
+      "no_duplicate_output_columns": true,
+      "expected_output_shape": true,
+      "candidate_input_count_188": true,
+      "label_unchanged": true,
+      "split_unchanged": true,
+      "source_table_id_unchanged": true
+    },
+    "all_passed": true
+  }
+}

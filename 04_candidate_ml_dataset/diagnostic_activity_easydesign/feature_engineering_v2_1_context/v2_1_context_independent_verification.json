@@ -1,0 +1,24 @@
+{
+  "all_passed": true,
+  "checks": {
+    "shape_11992_by_246": true,
+    "parent_shape_11992_by_188": true,
+    "record_id_unique": true,
+    "row_order_unchanged": true,
+    "parent_columns_preserved": true,
+    "all_parent_values_exact": true,
+    "58_context_dictionary_rows": true,
+    "58_context_table_columns": true,
+    "188_candidate_inputs": true,
+    "context_no_missing": true,
+    "context_all_finite": true,
+    "target_ungapped_has_no_gap": true,
+    "target_aligned_25_unchanged": true,
+    "label_unchanged": true,
+    "split_unchanged": true,
+    "no_duplicate_columns": true
+  },
+  "parent_sha256": "42ec7035ae5d560cfef5206f425d594bd209207b518641ed51409d4164d62145",
+  "candidate_sha256": "39cda8368c216784507ac002df687b28a4f9cc6f81e2b0e84043e45eddb4c1c0",
+  "dictionary_sha256": "8585673d72bc7f53f2d2df4b686da22f60084b05786b93a2247d7ed977f56c66"
+}

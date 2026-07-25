@@ -1,0 +1,32 @@
+{
+  "full_table": {
+    "file_name": "EasyDesign_2024_diagnostic_activity_feature_table_v3.csv",
+    "sha256": "3701482e61fbdb0fb30af2173fa0911154329b12555552592dbe37d2e72ed89a",
+    "bytes": 25406385
+  },
+  "nonpositional4_table": {
+    "file_name": "EasyDesign_2024_diagnostic_activity_feature_table_v3_nonpositional4_candidate.csv",
+    "sha256": "8bd41cb0b762e676d4e68057ab0a43a3073fada7a3a591812300411cf109e085",
+    "bytes": 20841427
+  },
+  "feature_dictionary": {
+    "file_name": "EasyDesign_2024_feature_dictionary_v3.csv",
+    "sha256": "94f29a5c079c0c3166d8352aa782cd40c4fe39a472a47186931547c3172e8a55",
+    "bytes": 45148
+  },
+  "feature_block_manifest": {
+    "file_name": "EasyDesign_2024_feature_block_manifest_v3.csv",
+    "sha256": "909e6b603223c16b0b219861a33d23b145d03eb2d5a4292ae09195c473dd0201",
+    "bytes": 11482
+  },
+  "nonpositional4_manifest": {
+    "file_name": "EasyDesign_2024_nonpositional4_feature_manifest_v3.csv",
+    "sha256": "e883dc88b1dca942b484fcf18fbf633fdb9c46dbe163327fec4693f2c304202a",
+    "bytes": 5562
+  },
+  "qc": {
+    "file_name": "EasyDesign_2024_feature_table_v3_qc.json",
+    "sha256": "1ff3e8088ae9846f06160e6610b6e481620f84e10ea6aa7820b4e0c98f4d9f60",
+    "bytes": 3382
+  }
+}

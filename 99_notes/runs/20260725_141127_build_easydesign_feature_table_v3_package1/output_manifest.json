@@ -1,0 +1,14 @@
+{
+  "operation_title": "Build EasyDesign Feature Table V3 Package1",
+  "data_outputs": {
+    "EasyDesign_2024_diagnostic_activity_feature_table_v3.csv": "3701482e61fbdb0fb30af2173fa0911154329b12555552592dbe37d2e72ed89a",
+    "EasyDesign_2024_diagnostic_activity_feature_table_v3_nonpositional4_candidate.csv": "8bd41cb0b762e676d4e68057ab0a43a3073fada7a3a591812300411cf109e085",
+    "EasyDesign_2024_feature_dictionary_v3.csv": "94f29a5c079c0c3166d8352aa782cd40c4fe39a472a47186931547c3172e8a55",
+    "EasyDesign_2024_feature_block_manifest_v3.csv": "909e6b603223c16b0b219861a33d23b145d03eb2d5a4292ae09195c473dd0201",
+    "EasyDesign_2024_nonpositional4_feature_manifest_v3.csv": "e883dc88b1dca942b484fcf18fbf633fdb9c46dbe163327fec4693f2c304202a"
+  },
+  "scripts": {
+    "audit_vertical3_delta_g.py": "b564e1b820d0c756b753ecd8f571825954f4e654cda47d6759d59d161a98b4df",
+    "build_easy_design_feature_table_v3.py": "1d0659f3bb12fac37198e58c8db7e78fe999a2a77b5a22a056ca7e911d8504df"
+  }
+}

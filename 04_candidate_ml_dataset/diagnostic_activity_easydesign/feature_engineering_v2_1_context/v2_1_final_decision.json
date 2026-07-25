@@ -1,0 +1,17 @@
+{
+  "selected_feature_set": "selected_v2_1",
+  "nominal_features": 188,
+  "active_features_after_full_development_constant_filter": 183,
+  "selected_blocks": [
+    "pair_alignment",
+    "pair_position",
+    "substitution_type",
+    "sequence_composition",
+    "sequence_context"
+  ],
+  "excluded_blocks": [],
+  "sequence_context_promoted": true,
+  "external_context_support": true,
+  "status": "promote_sequence_context_with_internal_and_external_support",
+  "usage": "Use the 188-name frozen manifest as the nominal V2-1 input. Within each training fold, fit medians on training data, fill residual missing values with zero, and remove only features constant in that fold. Do not use labels or Table S5 to reselect features."
+}
